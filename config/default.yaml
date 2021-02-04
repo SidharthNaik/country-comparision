@@ -1,0 +1,17 @@
+---
+  accept:
+    - application/json
+  server:
+    uri: localhost:3000
+  routes:
+    controllerRootUrl: '/api'
+  api:
+    protocol: 'http'
+    host: 'd6wn6bmjj722w.population.io'
+    rootPath: '/1.0'
+  logging:
+    stdout:
+      enabled: true
+      level: debug
+  port: 3000
+  env: dev
