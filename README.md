@@ -36,13 +36,19 @@ Zip your solution, upload it somewhere, and send us a link to the zipped file.
 ### Bonus
 1. Some scenarios to consider (leave your thoughts inline in your code or edit the README):
   * How efficient is your code?  What are some ways that you could improve performance?
+  **The code can effeciently process country and population list requests and the caching added reduces time required for future requests. The performance can be improved by adding external caching using Redis and a Database which can regularly fetch data from external API and store for faster processing of requests.**
   * Suppose we expect this API to be hit 1000s of times a second.  How can we handle the load?
-  * What if the 3rd party provider is not available?  How resilient is our API?
+  **Node js is capable of handling the number of requests and the bottle neck of fetching the data from population.io API can be reduced by caching and having local database synced with the data available regularly can improve the handling of the requests**
+  * What if the 3rd party provider is not available?  How resilient is our API? 
+  **The API will be down for the duration which the 3rd party provider will be down but will be able to fetch the data again once it's up and running**
   * What if the requirement for the new endpoint was to also allow the consumer to compare populations for any given date.  How would you modify your implementation?
-  * What if we have a database of users and we wanted to make our API smarter by defaulting comparisons to always include the population of the current user's country.  How could we accomplish this?
-  * What if we wanted to keep a tally of the most frequently requested countries and have this be available to consumers.  How could we accomplish this?
+  **Done in code**
+  * What if we have a database of users and we wanted to make our API smarter by defaulting comparisons to always include the population of the current user's country.  How could we accomplish this? **Done in code**
+  * What if we wanted to keep a tally of the most frequently requested countries and have this be available to consumers.  How could we accomplish this? 
+  **Adding a tally with country hits and storing in database at the end of every day**
 
 2. Dockerize the API
+  * **Done in code**
 
 <br>
 <i><a name="footnote1"><sup>1</sup></a> Joe says that api.population.io is down, so try https://d6wn6bmjj722w.population.io/ as the host instead.<i>
