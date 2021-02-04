@@ -5,24 +5,6 @@ const gotRequest = require('./got-request');
 const NodeCache = require('node-cache');
 const countryCache = new NodeCache();
 
-// const countries = [
-//   'Afghanistan',
-//   'AFRICA',
-//   'Albania',
-//   'Algeria',
-//   'Angola',
-//   'Antigua and Barbuda',
-//   'Arab Rep of Egypt',
-//   'Argentina',
-//   'Armenia',
-//   'Aruba',
-//   'ASIA',
-//   'Australia',
-//   'Australia/New Zealand',
-//   'Austria',
-//   'Azerbaijan'
-// ];
-
 function getCountriesApiPath() {
   return (
     config.api.protocol +
