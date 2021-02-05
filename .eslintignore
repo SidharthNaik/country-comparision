@@ -1,3 +1,5 @@
 coverage/
 dist/
 doc/
+__test__
+__mock__

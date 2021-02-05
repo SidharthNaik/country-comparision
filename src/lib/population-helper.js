@@ -17,7 +17,7 @@ function getPopulationApiPath() {
   );
 }
 
-exports.getPopulation = async function getpopulation(countryName, date) {
+exports.getPopulation = async function getPopulation(countryName, date) {
   if (!populationCache.has(countryName + date)) {
     populationCache.set(
       countryName + date,
@@ -39,9 +39,10 @@ exports.buildCountryList = async function buildCountryList(countryParam) {
   const validCountries = await countryHelper.getCountries();
   const validCountrieslc = validCountries.map((item) => item.toLowerCase());
   const countryList = [];
+  // Checking if it is a valid country ignoring case and adding it to list
   for (const country of countries) {
     if (validCountrieslc.indexOf(country.toLowerCase()) === -1) {
-      throw Error('Invalid country - ' + country + ' .Please Select a valid country');
+      throw Error('Invalid country - ' + country + '. Please Select a valid country');
     } else {
       countryList.push(
         validCountries[validCountrieslc.indexOf(country.toLowerCase())]
